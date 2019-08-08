@@ -28,6 +28,8 @@ class YouTube extends EventEmitter {
       '&type=video' +
       `&key=${this.key}`;
 
+    console.log(url);
+
     this.request(url, data => {
       if (!data.items[0])
         this.emit('error', 'Can not find live.');
@@ -49,6 +51,8 @@ class YouTube extends EventEmitter {
       '?part=liveStreamingDetails' +
       `&id=${this.liveId}` +
       `&key=${this.key}`;
+
+    console.log(url);
 
     this.request(url, data => {
       if (!data.items.length) {
@@ -77,6 +81,8 @@ class YouTube extends EventEmitter {
       '&part=id,snippet,authorDetails' +
       '&maxResults=2000' +
       `&key=${this.key}`;
+
+    console.log(url);
 
     this.request(url, data => {
       this.emit('json', data);
