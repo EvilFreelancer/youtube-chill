@@ -1,6 +1,6 @@
 {
   "name": "youtube-chill",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Library for work with YouTube live chats",
   "main": "index.js",
   "dependencies": {

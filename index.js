@@ -10,13 +10,13 @@ class YouTube extends EventEmitter {
   /**
    * @param {string} ChannelID ID of the channel to acquire with
    * @param {string} APIKey You'r API key
-   * @param {string} Interval Interval of chat refresh
+   * @param {string} Delay Interval of chat refresh
    */
-  constructor({ChannelID, APIKey, Interval}) {
+  constructor({ChannelID, APIKey, Delay}) {
     super();
-    this.id  = ChannelID;
-    this.key = APIKey;
-    this.key = Interval;
+    this.id    = ChannelID;
+    this.key   = APIKey;
+    this.delay = Delay;
   }
 
   connect() {
@@ -103,14 +103,13 @@ class YouTube extends EventEmitter {
   /**
    * Gets live chat messages at regular intervals.
    *
-   * @param {number} delay Interval to get live chat messages
    * @fires YouTube#message
    */
-  listen(delay) {
+  listen() {
     let lastRead = 0,
         time     = 0;
 
-    this.interval = setInterval(() => this.getChat(), delay);
+    this.interval = setInterval(() => this.getChat(), this.delay);
 
     this.on('json', data => {
       for (const item of data.items) {
