@@ -1,0 +1,28 @@
+{
+  "name": "youtube-chill",
+  "description": "Library for work with YouTube live chats",
+  "main": "index.js",
+  "dependencies": {
+    "events": "^1.1.1",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvilFreelancer/youtube-chill.git"
+  },
+  "keywords": [
+    "youtube",
+    "live",
+    "chat"
+  ],
+  "author": "EvilFreelancer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EvilFreelancer/youtube-chill/issues"
+  },
+  "homepage": "https://github.com/EvilFreelancer/youtube-chill#readme"
+}
